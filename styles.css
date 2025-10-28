@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap');
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes lol-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(205, 164, 94, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(205, 164, 94, 0.6);
+  }
+}
+
+body {
+  font-family: 'Cinzel', serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.lol-gradient {
+  background: linear-gradient(135deg, #c89b3c 0%, #f0e6d2 25%, #c8aa6e 50%, #463714 75%, #1e2328 100%);
+  background-size: 400% 400%;
+  animation: lol-gradient 8s ease infinite;
+}
+
+.text-gold-400 {
+  color: #c89b3c;
+}
+
+.border-gold-400 {
+  border-color: #c89b3c;
+}
+
+.bg-gold-400 {
+  background-color: #c89b3c;
+}
+
+.ring-gold-400 {
+  --tw-ring-color: #c89b3c;
+}
+
+.shadow-gold-400\/20 {
+  --tw-shadow-color: rgba(200, 155, 60, 0.2);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out;
+}
+
+.animate-fade-in {
+  animation: fade-in 0.6s ease-out;
+}
+
+.champion-card {
+  background: linear-gradient(145deg, rgba(30, 35, 40, 0.9), rgba(70, 55, 20, 0.3));
+  border: 1px solid rgba(200, 155, 60, 0.3);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.champion-card:hover {
+  border-color: #c89b3c;
+  animation: glow 2s infinite;
+  transform: translateY(-5px) scale(1.05);
+}
+
+.champion-detail-card {
+  background: linear-gradient(145deg, rgba(30, 35, 40, 0.95), rgba(70, 55, 20, 0.2));
+  border: 1px solid rgba(200, 155, 60, 0.4);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(30, 35, 40, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c89b3c;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f0e6d2;
+}
+
+/* Responsive text sizes */
+@media (max-width: 768px) {
+  .champion-card {
+    padding: 0.75rem;
+  }
+  
+  .champion-detail-card {
+    padding: 1rem;
+  }
+}
+
+/* Ability tooltips */
+.ability-tooltip {
+  position: relative;
+}
+
+.ability-tooltip:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(30, 35, 40, 0.95);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  z-index: 1000;
+  border: 1px solid #c89b3c;
+}
+
+/* Loading animations */
+.loading-shimmer {
+  background: linear-gradient(90deg, transparent, rgba(200, 155, 60, 0.2), transparent);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Role badges */
+.role-assassin { background: linear-gradient(135deg, #dc2626, #991b1b); }
+.role-fighter { background: linear-gradient(135deg, #ea580c, #c2410c); }
+.role-mage { background: linear-gradient(135deg, #7c3aed, #5b21b6); }
+.role-marksman { background: linear-gradient(135deg, #059669, #047857); }
+.role-support { background: linear-gradient(135deg, #0891b2, #0e7490); }
+.role-tank { background: linear-gradient(135deg, #4b5563, #374151); }
